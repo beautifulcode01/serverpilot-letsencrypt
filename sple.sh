@@ -1,7 +1,7 @@
 #!/bin/bash
 # Bash script to create/add Let's Encrypt SSL to ServerPilot app
 # by Rudy Affandi (2016)
-# Edited Aug 14, 2016
+# Edited May 13, 2018 by Arijit Biswas (Harry)
 
 # Todo
 # 1. Generate certificate
@@ -50,7 +50,8 @@ then
 fi
 
 # 16.04 Xenial Xerus
-if [ $ubuntu == '16.04' ]
+# 18.04 Bionic Beaver
+if [ $ubuntu == '16.04' ] || [ $ubuntu == '18.04' ]
 then
 
     le=$(dpkg-query -W -f='${Status}' letsencrypt 2>/dev/null | grep -c "ok installed")
@@ -117,7 +118,8 @@ then
 fi
 
 # 16.04 Xenial Xerus
-if [ $ubuntu == '16.04' ]
+# 18.04 Bionic Beaver
+if [ $ubuntu == '16.04' ] || [ $ubuntu == '18.04' ]
 then
     letsencrypt certonly --webroot -w /srv/users/$username/apps/$appname/public ${APPDOMAINLIST[@]}
 fi
@@ -219,7 +221,8 @@ then
 fi
 
 # 16.04 Xenial Xerus
-if [ $ubuntu == '16.04' ]
+# 18.04 Bionic Beaver
+if [ $ubuntu == '16.04' ] || [ $ubuntu == '18.04' ]
 then
     echo "0 */12 * * * letsencrypt renew && service nginx-sp reload"
 fi
