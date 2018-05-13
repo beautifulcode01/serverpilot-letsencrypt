@@ -31,12 +31,12 @@ Restart nginx
 ## Schedule auto renewal
 Add the following to your crontab (`crontab -e`)
 
-**For Ubuntu 14.04 or Ubuntu 18.04** 
+**For Ubuntu 14.04** 
 ```
 0 */12 * * * /usr/local/bin/certbot-auto renew --quiet --no-self-upgrade --post-hook "service nginx-sp reload"
 ```
 
-**For Ubuntu 16.04**  
+**For Ubuntu 16.04 or Ubuntu 18.04**  
 ```
 0 */12 * * * letsencrypt renew && service nginx-sp reload
 ```
