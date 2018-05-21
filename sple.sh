@@ -1,7 +1,6 @@
 #!/bin/bash
 # Bash script to create/add Let's Encrypt SSL to ServerPilot app
 # by Rudy Affandi (2016)
-# Edited May 13, 2018 by Arijit Biswas (Harry)
 
 # Todo
 # 1. Generate certificate
